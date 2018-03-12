@@ -8,3 +8,6 @@ I received a request to make a whatsapp bot that would follow all the Whatsapp r
 Other functions were added when they were needed. This is a BEGINNER friendly repository as I am using it to learn GIT. Any contribution is welcome.
 
 ![alt text](/programWorkflow.jpg)
+
+
+If you want to try the program out please download the repository and paste it somewhere. Try to keep the folder structure the same or the program may not work as intended.
