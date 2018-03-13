@@ -63,7 +63,7 @@ Loop ;main program loop
     if(previousTelNumber!=currentTelNumber) ;if the number has changed reset the erase tries
         EraseTries=0
 
-;**********************************************BROJ JE VEC U BAZI PODATAKA********************************************
+;**********************************************NUMBER IS ALREADY in CONTACTS = it doesnt have a + sign********************************************
     if(InStr(currentTelNumber, "+")==0 and EraseTries==0) ;if there is no + or a new number then enter
     {
  
@@ -197,8 +197,8 @@ tries = 0
 Loop
 {
     CoordMode, Pixel, Window
-    ImageSearch, FoundX, FoundY, 988, 8, 1373, 374, .\pictures\izbrisiKontaktTekst.png
-	  CenterImgSrchCoords(".\pictures\izbrisiKontaktTekst.png", FoundX, FoundY) 
+    ImageSearch, FoundX, FoundY, 988, 8, 1373, 374, .\pictures\deleteContactTest.png
+	  CenterImgSrchCoords(".\pictures\deleteContactTest.png", FoundX, FoundY) 
     If ErrorLevel = 0
     	Click, %FoundX%, %FoundY%, 1
     Sleep, 10
@@ -405,29 +405,29 @@ if(AttributeString =="")
 If newContactOrderNumber <= 9
 {
     FileAppend, 0000%newContactOrderNumber%0000%buffer%, %saveLocation%
-    Goto, Izlaz
+    Goto, escape
 }
 If newContactOrderNumber <= 99
 {
     FileAppend, 000%newContactOrderNumber%%buffer%, %saveLocation%
-    Goto, Izlaz
+    Goto, escape
 }
 If newContactOrderNumber <= 999
 {
     FileAppend, 00%newContactOrderNumber%%buffer%, %saveLocation%
-    Goto, Izlaz
+    Goto, escape
 }
 If newContactOrderNumber <= 9999
 {
     FileAppend, 0%newContactOrderNumber%%buffer%, %saveLocation%
-    Goto, Izlaz
+    Goto, escape
 }
 If newContactOrderNumber <= 99999
 {
     FileAppend, %newContactOrderNumber%%buffer%, %saveLocation%
-    Goto, Izlaz
+    Goto, escape
 }
-Izlaz:
+escape:
 
 
 }
